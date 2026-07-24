@@ -182,3 +182,59 @@ footer {
         font-size: 14px;
     }
 }
+/* === 1. NAVIGATION LAYOUT - FLEXBOX === */
+nav ul {
+  display: flex; /* turn ul into flex container */
+  justify-content: center; /* center the links. use space-around if you want gaps */
+  gap: 20px; /* space between links */
+  list-style: none; /* remove bullet points */
+  padding: 0;
+}
+
+/* === 2. FORM LAYOUT - FLEXBOX === */
+.form-group {
+  display: flex; /* make label and input a flex container */
+  flex-direction: column; /* stack label above input */
+  gap: 5px; /* 5px gap between label and input */
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.form-group input, 
+.form-group select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+/* === 3. RESPONSIVE DESIGN - MOBILE BREAKPOINT === */
+@media (max-width: 768px) {
+
+  /* Navigation: stack links vertically */
+  nav ul {
+    flex-direction: column; /* stack instead of row */
+    align-items: center; /* center the stacked links */
+    gap: 10px;
+  }
+
+  /* Container Widths: make main and form take full width */
+  main {
+    width: 95%; /* or 100% */
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  .form-container {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  /* Tables: make them scroll horizontally on small screens */
+  .data-table {
+    display: block;
+    overflow-x: auto; /* enables horizontal scroll */
+    white-space: nowrap;
+  }
+}
